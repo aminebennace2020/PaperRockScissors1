@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title>OVER 9000 - Paper Rock Scissors</title>
+<head>
+<style type="text/css">
+div
+{
+   width:100px;
+   height:75px;
+   background-color:red;
+   border:1px solid black;
+}
+#div2
+{
+   transform:rotate(30deg);
+   -ms-transform:rotate(30deg); /* IE 9 */
+   -moz-transform:rotate(30deg); /* Firefox */
+   -webkit-transform:rotate(30deg); /* Safari and Chrome */
+   -o-transform:rotate(30deg); /* Opera */
+   background-color:yellow;
+}
+</style>
+</head>
+<body>
+<div>Hello, World!</div>
+<div id="div2">Hello, CSS3!</div>
+
+
+<script>
+for (let round = 0; round < 5; round++) {
+var computerPlay = ['Rock',
+'Paper',
+'Scissors'
+];
+
+// step 2 -- creating the function that will randomize the computer's hand
+function randomWord(arr) {
+return arr[Math.floor(Math.random() * arr.length)]};
+
+// step 3 -- simulate a round --player vs computer
+
+let playerChoice = prompt("Please pick a word", "choose paper rock ou scissors");
+alert(`your choice is ${playerChoice}`);
+playerChoice1 = playerChoice.toUpperCase();
+alert(`your choice AFTER UPPERCASE is ${playerChoice1}`);
+
+
+let computerChoice = randomWord(computerPlay);
+computerChoice1 = computerChoice.toUpperCase();
+alert(`Computer's choice AFTER UPPERCASE is ${computerChoice1}`);
+
+
+switch (playerChoice1 + computerChoice1) {
+	case "PAPERSCISSORS":
+		alert("you lose1");
+		break;
+	case "PAPERROCK":
+		alert("you win2");
+		break;
+    case "PAPERPAPER":
+		alert("Draw3");
+		break;
+	case "SCISSORSSCISSORS":
+		alert("Draw4");
+		break;
+	case "SCISSORSROCK":
+		alert("you lose5");
+		break;
+	case "SCISSORSPAPER":
+		alert("you win6");
+		break;
+	case "ROCKROCK":
+		alert("Draw7");
+		break;
+	case "ROCKPAPER":
+		alert("you lost8");
+		break;
+	case "ROCKSCISSORS":
+		alert("you win9");
+		break;
+    default:
+		alert("I don't know10")};
+}
+</script>
+
+</body>
+</html>

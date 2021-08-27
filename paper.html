@@ -1,0 +1,84 @@
+<script>
+
+
+//pseudocode
+// input
+// 1- promp player 
+// 2- ramdon result from computer
+// 3-follow logic of the automatic response
+
+
+
+// step 1 --creating the list of words --array
+
+var computerPlay = ['Rock',
+'Paper',
+'Scissors'
+];
+
+// step 2 -- creating the function that will randomize the computer's hand
+function randomWord(arr) {
+return arr[Math.floor(Math.random() * arr.length)]};
+
+function loop() {
+// step 3 -- simulate a round --player vs computer
+let playerChoice = prompt("Please pick a word", "choose paper rock ou scissors");
+console.log(`your choice is ${playerChoice}`);
+playerChoice1 = playerChoice.toUpperCase()
+console.log(`your choice AFTER UPPERCASE is ${playerChoice1}`);
+
+let computerChoice = randomWord(computerPlay);
+computerChoice1 = computerChoice.toUpperCase();
+alert(`Computer's choice AFTER UPPERCASE is ${computerChoice1}`);
+
+// fix the output conditions
+switch (playerChoice1 + computerChoice1) {
+	case "PAPERSCISSORS":
+		console.log("you lose1");
+		break;
+	case "PAPERROCK":
+		console.log("Draw2");
+		break;
+    case "PAPERPAPER":
+		console.log("Draw3");
+		break;
+	case "SCISSORSSCISSORS":
+		console.log("Draw4");
+		break;
+	case "SCISSORSROCK":
+		console.log("you lose5");
+		break;
+	case "SCISSORSPAPER":
+		console.log("you win6");
+		break;
+	case "ROCKROCK":
+		console.log("Draw7");
+		break;
+	case "ROCKPAPER":
+		console.log("you lost8");
+		break;
+	case "ROCKSCISSORS":
+		console.log("you win9");
+		break;
+    default:
+		alert("I don't know10")};
+	}
+loop();
+		
+//loop
+
+function loop() {
+
+	let playerChoice = prompt("Please pick a word", "choose paper rock ou scissors");
+console.log(`your choice is ${playerChoice}`);
+
+playerChoice1 = playerChoice.toUpperCase()
+
+console.log(`your choice AFTER UPPERCASE is ${playerChoice1}`);
+  requestAnimationFrame(loop);
+}
+loop();
+
+
+
+</script>
